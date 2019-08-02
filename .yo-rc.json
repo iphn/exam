@@ -1,0 +1,36 @@
+{
+  "generator-ngx-rocket": {
+    "version": "7.0.2",
+    "props": {
+      "location": "path",
+      "strict": false,
+      "skipInstall": false,
+      "skipQuickstart": false,
+      "initGit": true,
+      "appName": "teste",
+      "target": [
+        "web"
+      ],
+      "pwa": true,
+      "ui": "material",
+      "layout": "simple",
+      "auth": false,
+      "lazy": true,
+      "angulartics": false,
+      "tools": [
+        "prettier",
+        "hads"
+      ],
+      "utility": [
+        "lodash",
+        "ramda",
+        "moment",
+        "datefns"
+      ],
+      "projectName": "teste",
+      "packageManager": "npm",
+      "mobile": [],
+      "desktop": []
+    }
+  }
+}
