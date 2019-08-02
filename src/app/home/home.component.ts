@@ -7,27 +7,23 @@ import { interval, Observable } from 'rxjs';
 @Component({
   selector: 'dialog-overview-example-dialog',
   template: `
-    <h1 mat-dialog-title>{{data.title}}</h1>
+    <h1 mat-dialog-title>{{ data.title }}</h1>
     <div mat-dialog-content>
-      <p>{{data.url}}</p>
-      <p>{{data.author}}</p>
-      <p>{{data.created_at}}</p>
+      <p>{{ data.url }}</p>
+      <p>{{ data.author }}</p>
+      <p>{{ data.created_at }}</p>
     </div>
-  <div mat-dialog-actions>
-    <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Ok</button>
-  </div>
-  `,
+    <div mat-dialog-actions>
+      <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Ok</button>
+    </div>
+  `
 })
 export class DialogOverviewExampleDialog {
-
-  constructor(
-    public dialogRef: MatDialogRef<DialogOverviewExampleDialog>,
-    @Inject(MAT_DIALOG_DATA) public data: any) {}
+  constructor(public dialogRef: MatDialogRef<DialogOverviewExampleDialog>, @Inject(MAT_DIALOG_DATA) public data: any) {}
 
   onNoClick(): void {
     this.dialogRef.close();
   }
-
 }
 
 @Component({
@@ -58,10 +54,10 @@ export class HomeComponent implements OnInit {
       )
       .subscribe(res => {
         this.data = res.hits;
-      })
+      });
   }
 
-  selectRow( i : number) {
+  selectRow(i: number) {
     this.openDialog(this.data[i]);
   }
 
@@ -77,10 +73,9 @@ export class HomeComponent implements OnInit {
 
   getData(): Observable<any> {
     return this.http.get(this.storyUrl).pipe(
-        map( (resp: any) => {
-          
-          return resp;
-        })
-    )
+      map((resp: any) => {
+        return resp;
+      })
+    );
   }
 }

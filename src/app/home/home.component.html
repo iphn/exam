@@ -4,7 +4,7 @@
       <img class="logo" src="assets/ngx-rocket-logo.png" alt="angular logo" />
     </p>
     <mat-card-content *ngIf="data">
-      <div>Results: {{data.length}}</div>
+      <div>Results: {{ data.length }}</div>
       <table class="table">
         <tr>
           <th>
@@ -22,17 +22,17 @@
         </tr>
         <tr (click)="selectRow(i)" *ngFor="let row of data; let i = index; trackBy: i">
           <td>
-            {{row.title}}
+            {{ row.title }}
           </td>
           <td>
-              {{row.url}}
+            {{ row.url }}
           </td>
           <td>
-              {{row.created_at}}
+            {{ row.created_at }}
           </td>
 
           <td>
-              {{row.author}}
+            {{ row.author }}
           </td>
         </tr>
       </table>
